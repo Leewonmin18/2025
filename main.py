@@ -103,4 +103,28 @@ job_recommendations = {
 # ===== Streamlit 앱 UI =====
 st.set_page_config(page_title="MBTI 직업 추천기", page_icon="💼", layout="centered")
 st.title("💼 MBTI 기반 직업 추천기")
-st
+st.markdown("당신의 MBTI에 맞는 직업을 추천해드립니다.  
+**MBTI를 선택**하고 버튼을 눌러보세요!")
+
+# MBTI 선택
+mbti = st.selectbox(
+    "당신의 MBTI를 선택하세요",
+    sorted(job_recommendations.keys())
+)
+
+# 추천 버튼 클릭 시 결과 출력
+if st.button("✨ 직업 추천 받기"):
+    st.subheader(f"🔍 {mbti} 유형 추천 직업")
+    for rec in job_recommendations.get(mbti, []):
+        st.markdown(
+            f"""
+            <div style="background-color:#f9f9f9; padding:15px; border-radius:10px; margin-bottom:10px;">
+                <h4>{rec['icon']} {rec['job']}</h4>
+                <p>{rec['desc']}</p>
+            </div>
+            """, 
+            unsafe_allow_html=True
+        )
+
+st.markdown("---")
+st.markdown("📌 **Tip:** MBTI는 참고용이며, 실제 진로는 경험, 가치관, 능력 등을 종합적으로 고려해야 합니다.")
