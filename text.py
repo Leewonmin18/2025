@@ -16,7 +16,7 @@ travel_spots = {
         {
             "name": "런던, 영국",
             "desc": "빅벤, 런던아이, 버킹엄 궁전이 있는 클래식한 도시",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/7/7e/London_Eye_Twilight_April_2006.jpg",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall.jpg",
             "playlist": [
                 ("London Calling - The Clash", "https://www.youtube.com/watch?v=EfK-WX2pa8c"),
                 ("Waterloo Sunset - The Kinks", "https://www.youtube.com/watch?v=N_MqfF0WBsU")
@@ -54,10 +54,19 @@ travel_spots = {
         {
             "name": "방콕, 태국",
             "desc": "화려한 사원과 맛있는 길거리 음식이 가득한 도시",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Grand_Palace_Bangkok_Thailand.jpg",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/1/1e/Grand_Palace_Bangkok.jpg",
             "playlist": [
                 ("One Night in Bangkok - Murray Head", "https://www.youtube.com/watch?v=rgYuCg-9TTg"),
                 ("Sabai Sabai - Stamp Apiwat", "https://www.youtube.com/watch?v=cmxSrlG9XJk")
+            ]
+        },
+        {
+            "name": "서울, 대한민국",
+            "desc": "한강과 남산타워, 전통과 현대가 함께하는 도시",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Seoul_at_night_%28cropped%29.jpg",
+            "playlist": [
+                ("Gangnam Style - PSY", "https://www.youtube.com/watch?v=9bZkp7q19f0"),
+                ("봄날 - BTS", "https://www.youtube.com/watch?v=xEeFrLSkMm8")
             ]
         }
     ],
@@ -65,7 +74,7 @@ travel_spots = {
         {
             "name": "뉴욕, 미국",
             "desc": "자유의 여신상과 타임스퀘어가 있는 세계적인 도시",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/4/47/New_york_times_square-terabass.jpg",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Statue_of_Liberty_7.jpg",
             "playlist": [
                 ("Empire State of Mind - Alicia Keys", "https://www.youtube.com/watch?v=QsZlY0Vz4-o"),
                 ("New York, New York - Frank Sinatra", "https://www.youtube.com/watch?v=le1QF9djDdc")
@@ -74,7 +83,7 @@ travel_spots = {
         {
             "name": "리우데자네이루, 브라질",
             "desc": "삼바와 축구, 코파카바나 해변으로 유명한 도시",
-            "img": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Rio_de_Janeiro_City.jpg",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/8/89/RiodeJaneiroCorcovado-CCBY.jpg",
             "playlist": [
                 ("The Girl from Ipanema - Astrud Gilberto", "https://www.youtube.com/watch?v=UJkxFhFRFDA"),
                 ("Mas Que Nada - Sergio Mendes", "https://www.youtube.com/watch?v=BrZBiqK0p9E")
@@ -90,6 +99,15 @@ travel_spots = {
                 ("Enta Omri - Umm Kulthum", "https://www.youtube.com/watch?v=TWIs5tP6Wks"),
                 ("Habibi Ya Nour El Ain - Amr Diab", "https://www.youtube.com/watch?v=Z3UHfi9dXK0")
             ]
+        },
+        {
+            "name": "케이프타운, 남아프리카공화국",
+            "desc": "테이블 마운틴과 바다가 어우러진 아름다운 도시",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/6/60/Table_Mountain_and_Cape_Town_2015.jpg",
+            "playlist": [
+                ("Jerusalema - Master KG", "https://www.youtube.com/watch?v=fCZVL_8D048"),
+                ("Waka Waka - Shakira", "https://www.youtube.com/watch?v=pRpeEdMmmQ0")
+            ]
         }
     ],
     "오세아니아": [
@@ -100,6 +118,15 @@ travel_spots = {
             "playlist": [
                 ("Down Under - Men at Work", "https://www.youtube.com/watch?v=XfR9iY5y94s"),
                 ("Great Southern Land - Icehouse", "https://www.youtube.com/watch?v=wmc0JGc7eyw")
+            ]
+        },
+        {
+            "name": "오클랜드, 뉴질랜드",
+            "desc": "스카이타워와 아름다운 항구 도시",
+            "img": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Auckland_skyline_seen_from_Mt_Victoria.jpg",
+            "playlist": [
+                ("Don’t Dream It’s Over - Crowded House", "https://www.youtube.com/watch?v=J9gKyRmic20"),
+                ("Royals - Lorde", "https://www.youtube.com/watch?v=nlcIKh6sBtc")
             ]
         }
     ]
