@@ -60,26 +60,26 @@ recycle_guide = {
 st.set_page_config(page_title="분리수거 가이드", page_icon="♻️", layout="centered")
 
 st.title("♻️ 분리수거 가이드 앱")
-st.write("물건 이름을 입력하면 올바른 분리수거 방법을 알려드립니다!")
+st.write("🔍 분리수거 방법을 알고 싶은 품목을 검색하거나 선택하세요!")
 
-# 사용자 입력
-item = st.text_input("품목을 입력하세요 (예: 페트병, 우유팩, 스티로폼, 유리병, 캔, 비닐봉지)")
+# 자동완성 (selectbox)
+item = st.selectbox(
+    "품목을 선택하거나 입력하세요",
+    options=[""] + list(recycle_guide.keys()),  # 빈칸 + 품목 목록
+    index=0
+)
 
 # 결과 출력
-if item:
-    if item in recycle_guide:
-        data = recycle_guide[item]
+if item and item in recycle_guide:
+    data = recycle_guide[item]
 
-        st.subheader(f"{data['icon']} {item} 분리수거 방법")
+    st.subheader(f"{data['icon']} {item} 분리수거 방법")
 
-        # 이미지 표시
-        st.image(data["image"], width=120)
+    # 아이콘 + 이미지 출력
+    st.image(data["image"], width=120)
 
-        # 정보 출력
-        st.markdown(f"**📂 분류**: {data['category']}")
-        st.markdown(f"**♻️ 재활용 여부**: {data['recyclable']}")
-        st.success(f"📌 방법: {data['guide']}")
-        st.warning(f"{data['warning']}")
-
-    else:
-        st.error("❌ 데이터베이스에 없는 품목입니다. 다른 품목을 입력해보세요.")
+    # 세부 정보
+    st.markdown(f"**📂 분류**: {data['category']}")
+    st.markdown(f"**♻️ 재활용 여부**: {data['recyclable']}")
+    st.success(f"📌 방법: {data['guide']}")
+    st.warning(f"{data['warning']}")
