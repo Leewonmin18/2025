@@ -130,4 +130,3 @@ for item in selected_items:
         st.markdown(f"**♻️ 재활용 여부**: {data['recyclable']}")
         st.success(f"📌 방법: {data['guide']}")
         st.warning(f"{data['warning']}")
-
