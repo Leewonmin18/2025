@@ -5,22 +5,48 @@ st.title("♻️ 분리수거 가이드 앱")
 st.markdown("카테고리를 선택하고, 품목 버튼을 클릭하면 상세 정보를 확인할 수 있어요!")
 
 # --------------------------
-# 데이터베이스 (아이콘만)
+# 데이터베이스 (품목 확장)
 # --------------------------
 recycle_guide = {
+    # 플라스틱
     "페트병": {"category": "플라스틱", "icon": "🥤", "recyclable": "✅ 재활용 가능"},
     "플라스틱 용기": {"category": "플라스틱", "icon": "🛢️", "recyclable": "✅ 재활용 가능"},
+    "플라스틱 빨대": {"category": "플라스틱", "icon": "🥤", "recyclable": "❌ 일반쓰레기"},
+    "플라스틱 장난감": {"category": "플라스틱", "icon": "🧸", "recyclable": "❌ 일반쓰레기"},
+
+    # 종이
     "신문지": {"category": "종이", "icon": "📰", "recyclable": "✅ 재활용 가능"},
     "책": {"category": "종이", "icon": "📚", "recyclable": "✅ 재활용 가능"},
+    "종이봉투": {"category": "종이", "icon": "🛍️", "recyclable": "✅ 재활용 가능"},
+    "종이상자": {"category": "종이", "icon": "📦", "recyclable": "✅ 재활용 가능"},
+
+    # 유리
     "유리병": {"category": "유리", "icon": "🍾", "recyclable": "✅ 재활용 가능"},
+    "유리컵": {"category": "유리", "icon": "🥂", "recyclable": "❌ 일반쓰레기"},
+    "유리조각": {"category": "유리", "icon": "🔹", "recyclable": "❌ 일반쓰레기"},
+
+    # 캔
     "음료 캔": {"category": "캔", "icon": "🥫", "recyclable": "✅ 재활용 가능"},
     "철 캔": {"category": "캔", "icon": "🛢️", "recyclable": "✅ 재활용 가능"},
+
+    # 음식물
     "남은 음식": {"category": "음식물", "icon": "🍚", "recyclable": "❌ 일반쓰레기"},
+    "과일 껍질": {"category": "음식물", "icon": "🍊", "recyclable": "❌ 일반쓰레기"},
+    "커피 찌꺼기": {"category": "음식물", "icon": "☕", "recyclable": "❌ 일반쓰레기"},
+
+    # 일반쓰레기
     "종이컵": {"category": "일반쓰레기", "icon": "☕", "recyclable": "❌ 일반쓰레기"},
+    "일회용 라이터": {"category": "일반쓰레기", "icon": "🔥", "recyclable": "❌ 일반쓰레기"},
+
+    # 전자제품
     "휴대폰": {"category": "전자제품", "icon": "📱", "recyclable": "♻️ 전자제품 수거함"},
     "배터리": {"category": "전자제품", "icon": "🔋", "recyclable": "♻️ 전자제품 수거함"},
+    "이어폰": {"category": "전자제품", "icon": "🎧", "recyclable": "♻️ 전자제품 수거함"},
+
+    # 기타
     "비닐봉지": {"category": "기타", "icon": "🛍️", "recyclable": "❌ 일반쓰레기"},
-    "스티로폼": {"category": "기타", "icon": "🍦", "recyclable": "❌ 일반쓰레기"}
+    "스티로폼": {"category": "기타", "icon": "🍦", "recyclable": "❌ 일반쓰레기"},
+    "고무장갑": {"category": "기타", "icon": "🧤", "recyclable": "❌ 일반쓰레기"}
 }
 
 # --------------------------
