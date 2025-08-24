@@ -1,8 +1,28 @@
 import streamlit as st
 
-st.set_page_config(page_title="분리수거 가이드", layout="centered")
-st.title("♻️ 분리수거 가이드 앱")
-st.markdown("카테고리를 선택하고, 품목 버튼을 클릭하면 상세 정보를 확인할 수 있어요!")
+# --------------------------
+# 페이지 설정
+# --------------------------
+st.set_page_config(
+    page_title="♻️ 분리수거 가이드 앱",
+    layout="centered",
+    page_icon="♻️"
+)
+
+# --------------------------
+# 앱 제목 & 설명
+# --------------------------
+st.markdown("<h1 style='text-align:center; color:green;'>♻️ 분리수거 가이드 앱</h1>", unsafe_allow_html=True)
+st.markdown(
+    """
+    <p style='text-align:center; color:gray; font-size:18px;'>
+    품목별로 재활용 정보를 확인하고, 올바른 분리수거 방법을 안내합니다.<br>
+    아래 카테고리에서 선택하고, 버튼을 클릭하면 상세 정보를 볼 수 있어요!
+    </p>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown("---")
 
 # --------------------------
 # 데이터베이스 (재분류 + 확장)
@@ -62,7 +82,7 @@ recycle_guide = {
     "비닐장판": {"category": "비닐", "icon": "🟩", "recyclable": "❌ 일반쓰레기"},
     "비닐컵": {"category": "비닐", "icon": "🥤", "recyclable": "❌ 일반쓰레기"},
 
-    # 기타 (재분류 후 남은 특수 품목)
+    # 기타
     "스티로폼": {"category": "기타", "icon": "🍦", "recyclable": "❌ 일반쓰레기"},
     "고철": {"category": "기타", "icon": "⚙️", "recyclable": "❌ 일반쓰레기"},
     "버튼 전지": {"category": "기타", "icon": "🔋", "recyclable": "❌ 일반쓰레기"}
@@ -75,19 +95,29 @@ st.subheader("카테고리별 보기 📂")
 category_list = ["플라스틱", "종이", "유리", "캔", "음식물", "일반쓰레기", "전자제품", "비닐", "기타"]
 selected_category = st.selectbox("카테고리를 선택하세요:", category_list)
 
+st.markdown(f"### 🟢 {selected_category} 품목 목록")
+
 # --------------------------
 # 선택된 카테고리 품목 버튼 생성
 # --------------------------
-st.write(f"### {selected_category} 품목 목록")
-
 category_items = [name for name, info in recycle_guide.items() if info["category"] == selected_category]
 
 if category_items:
     for item_name in category_items:
-        if st.button(f"{recycle_guide[item_name]['icon']} {item_name}"):
-            info = recycle_guide[item_name]
-            st.success(f"{info['icon']} **품목:** {item_name}")
-            st.write(f"**분류:** {info['category']}")
-            st.write(f"**재활용 여부:** {info['recyclable']}")
+        col1, col2 = st.columns([1, 5])
+        with col1:
+            st.markdown(f"{recycle_guide[item_name]['icon']}", unsafe_allow_html=True)
+        with col2:
+            if st.button(f"{item_name}"):
+                info = recycle_guide[item_name]
+                st.success(f"{info['icon']} **품목:** {item_name}")
+                st.write(f"**분류:** {info['category']}")
+                st.write(f"**재활용 여부:** {info['recyclable']}")
 else:
-    st.write("해당 카테고리에 등록된 품목이 없습니다.")
+    st.info("해당 카테고리에 등록된 품목이 없습니다.")
+
+st.markdown("---")
+st.markdown(
+    "<p style='text-align:center; color:gray;'>앱 제작: 원민 ♻️</p>",
+    unsafe_allow_html=True
+)
