@@ -23,28 +23,35 @@ recycle_guide = {
 }
 
 # --------------------------
-# 검색 기능
+# 1️⃣ 품목 검색
 # --------------------------
-st.subheader("품목 검색")
-item = st.text_input("검색할 품목을 입력하세요:")
+st.subheader("품목 검색 🔍")
+item = st.text_input("검색할 품목 이름을 입력하세요:")
 
 if item:
     guide = recycle_guide.get(item)
     if guide:
-        st.write(f"**품목:** {item} {guide['icon']}")
+        st.success(f"✅ 품목: {item} {guide['icon']}")
         st.write(f"**분류:** {guide['category']}")
         st.write(f"**재활용 여부:** {guide['recyclable']}")
     else:
-        st.warning("해당 품목 정보가 없습니다.")
+        st.warning("❌ 해당 품목 정보가 없습니다.")
+
+st.markdown("---")  # 구분선
 
 # --------------------------
-# 카테고리별 보기
+# 2️⃣ 카테고리별 보기
 # --------------------------
-st.subheader("카테고리별 보기")
+st.subheader("카테고리별 보기 📂")
 category_list = ["플라스틱", "종이", "유리", "캔", "음식물", "일반쓰레기", "전자제품", "기타"]
 selected_category = st.selectbox("카테고리를 선택하세요:", category_list)
 
-st.write(f"### {selected_category} 품목")
+st.write(f"### {selected_category} 품목 목록")
+found = False
 for name, info in recycle_guide.items():
     if info["category"] == selected_category:
         st.write(f"{info['icon']} {name} - {info['recyclable']}")
+        found = True
+
+if not found:
+    st.write("해당 카테고리에 등록된 품목이 없습니다.")
