@@ -17,7 +17,7 @@ st.markdown(
     """
     <p style='text-align:center; color:gray; font-size:18px;'>
     품목별로 재활용 정보를 확인하고, 올바른 분리수거 방법을 안내합니다.<br>
-    아래 카테고리에서 선택하고, 버튼을 클릭하면 상세 정보를 볼 수 있어요!
+    아래 카테고리에서 선택하거나, 검색창에서 직접 검색해보세요!
     </p>
     """,
     unsafe_allow_html=True
@@ -87,6 +87,25 @@ recycle_guide = {
     "고철": {"category": "기타", "icon": "⚙️", "recyclable": "❌ 일반쓰레기"},
     "버튼 전지": {"category": "기타", "icon": "🔋", "recyclable": "❌ 일반쓰레기"}
 }
+
+# --------------------------
+# 검색 기능 추가
+# --------------------------
+st.subheader("검색 기능 🔍")
+query = st.text_input("검색할 품목을 입력하세요:")
+
+if query:
+    results = [name for name in recycle_guide if query in name]
+    if results:
+        for item in results:
+            info = recycle_guide[item]
+            st.success(f"{info['icon']} **품목:** {item}")
+            st.write(f"**분류:** {info['category']}")
+            st.write(f"**재활용 여부:** {info['recyclable']}")
+    else:
+        st.warning("검색 결과가 없습니다.")
+
+st.markdown("---")
 
 # --------------------------
 # 카테고리 선택
